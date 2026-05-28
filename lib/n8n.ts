@@ -79,8 +79,8 @@ export async function sendToN8n(message: string): Promise<N8nWebhookResponse> {
         status: 'ok',
         message: typeof data.message === 'string'
           ? data.message
-          : typeof (data as Record<string, unknown>).output === 'string'
-            ? (data as Record<string, unknown>).output as string
+          : typeof (data as unknown as Record<string, unknown>).output === 'string'
+            ? (data as unknown as Record<string, unknown>).output as string
             : JSON.stringify(data),
       };
     }
