@@ -124,3 +124,65 @@ body {
 * {
   transition: border-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease, background-color 0.2s ease;
 }
+
+/* Slide-in animation for chat panel */
+@keyframes slide-in-from-right {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+.animate-in {
+  animation-fill-mode: both;
+}
+
+.slide-in-from-right {
+  animation: slide-in-from-right 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Financial table styles via react-markdown components override */
+.prose-finance table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 0.8rem;
+}
+
+.prose-finance thead th {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(212, 175, 55, 0.15);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  padding: 8px 12px;
+  text-align: left;
+  font-weight: 600;
+  color: #fde68a;
+}
+
+.prose-finance tbody td {
+  border: 1px solid rgba(212, 175, 55, 0.12);
+  padding: 8px 12px;
+  vertical-align: middle;
+}
+
+.prose-finance tbody tr:nth-child(even) td {
+  background: rgba(212, 175, 55, 0.05);
+}
+
+.prose-finance tbody td.align-right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  color: #fde68a;
+}
+
+.prose-finance tbody th.align-right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+/* Skeleton loader animation */
+@keyframes skeleton-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}

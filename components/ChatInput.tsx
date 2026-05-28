@@ -18,8 +18,8 @@ export default function ChatInput({ onSend, disabled }: Props) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="relative">
-      <div className="relative flex items-center bg-gray-800/50 rounded-2xl border border-amber-500/20 focus-within:border-amber-400/60 transition-all">
+    <form onSubmit={handleSubmit} className="relative sticky bottom-0">
+      <div className="relative flex items-center bg-gray-800/60 backdrop-blur-sm rounded-2xl border border-amber-500/20 focus-within:border-amber-400/70 focus-within:shadow-lg focus-within:shadow-amber-500/10 transition-all">
         <input
           type="text"
           value={input}
@@ -63,7 +63,7 @@ export default function ChatInput({ onSend, disabled }: Props) {
             type="button"
             onClick={() => setInput(suggestion)}
             disabled={disabled}
-            className="text-xs px-3 py-1.5 rounded-full bg-gray-800/50 text-gray-400 border border-gray-700 hover:border-amber-500/30 hover:text-amber-400 whitespace-nowrap transition-colors disabled:opacity-50"
+            className="text-xs px-3 py-1.5 rounded-full bg-white/5 backdrop-blur-sm text-gray-400 border border-white/10 hover:border-amber-500/30 hover:text-amber-400 hover:-translate-y-0.5 hover:shadow-md hover:shadow-amber-500/10 whitespace-nowrap transition-all disabled:opacity-50"
           >
             {suggestion}
           </button>

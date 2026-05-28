@@ -37,7 +37,16 @@ export default function DemoPage() {
         )
       );
 
-      if (data.status === 'ok' && data.message) {
+      if (data.status === 'error' && data.message) {
+        const errorMessage: ChatMessageType = {
+          id: (Date.now() + 1).toString(),
+          role: 'assistant',
+          content: data.message,
+          timestamp: new Date(),
+          status: 'error',
+        };
+        setMessages((prev) => [...prev, errorMessage]);
+      } else if (data.status === 'ok' && data.message) {
         const aiMessage: ChatMessageType = {
           id: (Date.now() + 1).toString(),
           role: 'assistant',
